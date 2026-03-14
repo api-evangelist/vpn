@@ -1,0 +1,15 @@
+name: VPN
+description: A VPN (Virtual Private Network) creates an encrypted tunnel between a
+  user's device and a remote network, protecting data from interception and masking
+  the user's IP address. It is widely used for secure remote access to corporate networks,
+  protecting privacy on public Wi-Fi, and bypassing geographic content restrictions.
+url: https://en.wikipedia.org/wiki/Virtual_private_network
+tags:
+- Networking
+- Security
+- Privacy
+- Encryption
+created: '2025'
+modified: '2025'
+apis: []
+common: []
