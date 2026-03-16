@@ -1,15 +1,21 @@
+aid: vpn
 name: VPN
 description: A VPN (Virtual Private Network) creates an encrypted tunnel between a
   user's device and a remote network, protecting data from interception and masking
   the user's IP address. It is widely used for secure remote access to corporate networks,
   protecting privacy on public Wi-Fi, and bypassing geographic content restrictions.
+type: Index
 url: https://en.wikipedia.org/wiki/Virtual_private_network
 tags:
-- Networking
-- Security
-- Privacy
-- Encryption
+  - Networking
+  - Security
+  - Privacy
+  - Encryption
 created: '2025'
-modified: '2025'
+modified: '2026-03-16'
+specificationVersion: '0.19'
 apis: []
 common: []
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
