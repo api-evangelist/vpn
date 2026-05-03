@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/vpn/json-schema/vpn-server-schema.json",
+  "title": "VPN Server",
+  "description": "Schema representing a VPN server endpoint with connection metadata.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the VPN server."
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name of the VPN server."
+    },
+    "hostname": {
+      "type": "string",
+      "description": "Server hostname or FQDN."
+    },
+    "ipAddress": {
+      "type": "string",
+      "format": "ipv4",
+      "description": "IPv4 address of the VPN server."
+    },
+    "country": {
+      "type": "object",
+      "description": "Country where the server is located.",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "ISO 3166-1 alpha-2 country code."
+        },
+        "name": {
+          "type": "string",
+          "description": "Country name."
+        }
+      }
+    },
+    "city": {
+      "type": "string",
+      "description": "City where the server is located."
+    },
+    "protocols": {
+      "type": "array",
+      "description": "VPN protocols supported by this server.",
+      "items": {
+        "type": "string",
+        "enum": ["OpenVPN", "WireGuard", "IKEv2", "IPSec", "L2TP", "PPTP", "SSTP"]
+      }
+    },
+    "load": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Current server load as a percentage."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["online", "offline", "maintenance"],
+      "description": "Current operational status."
+    },
+    "features": {
+      "type": "array",
+      "description": "Special features supported by the server.",
+      "items": {
+        "type": "string",
+        "enum": ["P2P", "Double VPN", "Obfuscated", "Onion Over VPN", "Dedicated IP"]
+      }
+    },
+    "port": {
+      "type": "integer",
+      "description": "Default connection port."
+    }
+  }
+}

@@ -1,0 +1,106 @@
+vocabulary:
+  name: VPN Vocabulary
+  description: >-
+    Key terms, protocols, and concepts in the VPN (Virtual Private Network)
+    technology landscape covering encryption, tunneling, privacy, and
+    network security.
+  version: '1.0'
+  created: '2026-05-03'
+  modified: '2026-05-03'
+  tags:
+    - Encryption
+    - Networking
+    - Privacy
+    - Security
+    - VPN
+
+  domains:
+    - name: Core Concepts
+      description: Fundamental VPN technology concepts
+      terms:
+        - term: VPN
+          definition: Virtual Private Network. An encrypted tunnel connecting a device to a remote network over the internet, providing privacy, security, and remote access.
+        - term: Tunneling
+          definition: The process of encapsulating one network protocol within another to create a secure communication channel.
+        - term: Encryption
+          definition: Mathematical transformation of data to make it unreadable to unauthorized parties.
+        - term: Decryption
+          definition: Reversing encryption to recover the original data using the appropriate key.
+        - term: Kill Switch
+          definition: A VPN feature that blocks all internet traffic if the VPN connection drops, preventing data leaks.
+        - term: DNS Leak
+          definition: A security flaw where DNS requests bypass the VPN tunnel and are visible to the ISP.
+        - term: Split Tunneling
+          definition: Routing some traffic through the VPN while allowing other traffic to use the regular internet connection.
+        - term: No-Log Policy
+          definition: A VPN provider commitment to not storing user activity or connection logs.
+
+    - name: VPN Protocols
+      description: Protocols used to create VPN connections
+      terms:
+        - term: WireGuard
+          definition: Modern, high-performance open-source VPN protocol using Curve25519 for key exchange and ChaCha20-Poly1305 for encryption. Favored for speed and simplicity.
+        - term: OpenVPN
+          definition: Open-source VPN protocol based on TLS/SSL. Highly configurable, widely supported, uses AES-256 encryption.
+        - term: IKEv2
+          definition: Internet Key Exchange version 2. Fast protocol often paired with IPSec, excellent for mobile devices due to MOBIKE support.
+        - term: IPSec
+          definition: Internet Protocol Security. Suite of protocols for authenticating and encrypting IP packets, used with IKEv2 and L2TP.
+        - term: L2TP
+          definition: Layer 2 Tunneling Protocol. Creates a tunnel but requires IPSec for encryption. Slower than modern alternatives.
+        - term: PPTP
+          definition: Point-to-Point Tunneling Protocol. Legacy protocol with known security vulnerabilities; not recommended for use.
+        - term: SSTP
+          definition: Secure Socket Tunneling Protocol. Microsoft's proprietary protocol using SSL/TLS, useful for bypassing firewalls.
+        - term: NordLynx
+          definition: NordVPN's WireGuard implementation with a double-NAT layer to address WireGuard's static IP privacy limitations.
+
+    - name: Encryption Standards
+      description: Cryptographic standards used in VPNs
+      terms:
+        - term: AES-256
+          definition: Advanced Encryption Standard with 256-bit key size. Military-grade symmetric encryption used by OpenVPN and IKEv2.
+        - term: ChaCha20-Poly1305
+          definition: Stream cipher and MAC combination used by WireGuard. Fast in software implementations.
+        - term: Curve25519
+          definition: Elliptic-curve Diffie-Hellman key agreement protocol used by WireGuard for key exchange.
+        - term: RSA
+          definition: Asymmetric encryption algorithm used for certificate-based authentication in OpenVPN and TLS.
+        - term: Perfect Forward Secrecy
+          definition: Cryptographic property ensuring that session keys cannot be compromised even if the server's private key is later obtained.
+        - term: TLS
+          definition: Transport Layer Security. Cryptographic protocol securing communication over networks, used by OpenVPN and SSTP.
+
+    - name: Network Architecture
+      description: VPN network design and infrastructure concepts
+      terms:
+        - term: VPN Server
+          definition: The remote endpoint that clients connect to, routing their traffic through the VPN tunnel.
+        - term: VPN Client
+          definition: Software on the user's device that initiates and manages the VPN connection.
+        - term: Tailnet
+          definition: A private mesh network created by Tailscale connecting devices using WireGuard with zero-configuration NAT traversal.
+        - term: Mesh VPN
+          definition: VPN architecture where devices connect directly to each other rather than routing through a central server.
+        - term: Site-to-Site VPN
+          definition: VPN connecting two or more networks (e.g., office branches) through a permanent tunnel.
+        - term: Remote Access VPN
+          definition: VPN allowing individual users to connect to a private network from any internet location.
+        - term: Zero Trust Network Access
+          definition: Security model replacing traditional VPN perimeters with identity-based access controls verified for each connection.
+        - term: Obfuscation
+          definition: Techniques to disguise VPN traffic to look like regular HTTPS traffic, bypassing VPN detection.
+
+    - name: VPN Providers
+      description: Notable commercial and open-source VPN providers
+      terms:
+        - term: NordVPN
+          definition: Commercial VPN provider with 6000+ servers in 60+ countries, offering NordLynx (WireGuard) and OpenVPN protocols, with a public server API.
+        - term: Tailscale
+          definition: WireGuard-based mesh VPN for teams with a REST management API. Zero-configuration with automatic NAT traversal.
+        - term: OpenVPN
+          definition: Both an open-source protocol and a commercial VPN service provider offering Access Server and CloudConnexa products.
+        - term: ProtonVPN
+          definition: Privacy-focused VPN provider from the Proton team, based in Switzerland, offering open-source clients.
+        - term: Cloudflare WARP
+          definition: Cloudflare's consumer and enterprise VPN/proxy service using the WireGuard-based MASQUE protocol.

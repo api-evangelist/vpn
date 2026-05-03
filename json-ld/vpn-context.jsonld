@@ -1,0 +1,52 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "vpn": "https://en.wikipedia.org/wiki/Virtual_private_network#",
+    "net": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "iana": "https://www.iana.org/assignments/",
+
+    "VirtualPrivateNetwork": "https://schema.org/SoftwareApplication",
+    "NetworkServer": "https://schema.org/Thing",
+    "CommunicationProtocol": "https://schema.org/Thing",
+
+    "vpn:protocol": {"@type": "xsd:string"},
+    "vpn:encryption": {"@type": "xsd:string"},
+    "vpn:tunnelType": {"@type": "xsd:string"},
+    "vpn:serverLoad": {"@type": "xsd:decimal"},
+    "vpn:serverCountry": {"@type": "xsd:string"},
+    "vpn:ipAddress": {"@type": "xsd:string"},
+    "vpn:port": {"@type": "xsd:integer"},
+
+    "name": "https://schema.org/name",
+    "description": "https://schema.org/description",
+    "url": "https://schema.org/url",
+    "SoftwareApplication": "https://schema.org/SoftwareApplication",
+    "license": "https://schema.org/license"
+  },
+  "@graph": [
+    {
+      "@id": "https://en.wikipedia.org/wiki/Virtual_private_network",
+      "@type": "VirtualPrivateNetwork",
+      "name": "Virtual Private Network (VPN)",
+      "description": "Technology for creating encrypted tunnels for secure network communication, privacy, and access.",
+      "vpn:protocols": ["WireGuard", "OpenVPN", "IKEv2", "IPSec", "L2TP"]
+    },
+    {
+      "@id": "https://www.wireguard.com/",
+      "@type": "CommunicationProtocol",
+      "name": "WireGuard",
+      "description": "Modern, high-performance VPN protocol using Curve25519 key exchange and ChaCha20-Poly1305 encryption.",
+      "url": "https://www.wireguard.com/",
+      "license": "GPLv2"
+    },
+    {
+      "@id": "https://openvpn.net/",
+      "@type": "CommunicationProtocol",
+      "name": "OpenVPN",
+      "description": "Open-source VPN protocol based on TLS, widely supported across platforms.",
+      "url": "https://openvpn.net/",
+      "license": "GPL"
+    }
+  ]
+}
