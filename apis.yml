@@ -41,6 +41,8 @@ apis:
       - url: https://sleeplessbeastie.eu/2019/02/18/how-to-use-public-nordvpn-api/
         type: Documentation
         description: Community documentation for the NordVPN public API.
+      - url: openapi/vpn-openapi.yml
+        type: OpenAPI
 
   - aid: vpn:tailscale-api
     name: Tailscale API

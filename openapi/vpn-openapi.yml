@@ -1,0 +1,159 @@
+openapi: 3.1.0
+info:
+  title: NordVPN Public API
+  version: '1.0'
+  description: >-
+    Minimal OpenAPI for the public NordVPN API providing server listings,
+    recommendations, server load statistics, country and group catalogs,
+    and supported VPN technologies.
+  x-generated-from: https://sleeplessbeastie.eu/2019/02/18/how-to-use-public-nordvpn-api/
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+  - url: https://api.nordvpn.com
+    description: NordVPN public API
+tags:
+  - name: Servers
+  - name: Stats
+  - name: Catalog
+paths:
+  /server:
+    get:
+      tags: [Servers]
+      summary: Retrieve all VPN servers (legacy endpoint)
+      responses:
+        '200':
+          description: Server list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /v1/servers:
+    get:
+      tags: [Servers]
+      summary: Get servers with pagination and filter support
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          schema:
+            type: integer
+        - name: filters[country_id]
+          in: query
+          schema:
+            type: integer
+        - name: filters[servers_groups][identifier]
+          in: query
+          schema:
+            type: string
+        - name: filters[servers_technologies][identifier]
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Server list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /v1/servers/countries:
+    get:
+      tags: [Catalog]
+      summary: List available countries
+      responses:
+        '200':
+          description: Country list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /v1/servers/recommendations:
+    get:
+      tags: [Servers]
+      summary: Get recommended servers for the current client
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+        - name: filters[country_id]
+          in: query
+          schema:
+            type: integer
+        - name: filters[servers_groups][identifier]
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Recommended servers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /server/stats:
+    get:
+      tags: [Stats]
+      summary: Server load statistics
+      responses:
+        '200':
+          description: Load statistics
+          content:
+            application/json:
+              schema:
+                type: object
+  /server/stats/{hostname}:
+    get:
+      tags: [Stats]
+      summary: Load statistics for a specific server
+      parameters:
+        - name: hostname
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Server load
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/servers/groups:
+    get:
+      tags: [Catalog]
+      summary: List server groups (categories)
+      responses:
+        '200':
+          description: Server groups
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /v1/technologies:
+    get:
+      tags: [Catalog]
+      summary: List supported VPN technologies
+      responses:
+        '200':
+          description: Technology list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+components: {}
