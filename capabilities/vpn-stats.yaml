@@ -1,0 +1,108 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: NordVPN Public API — Stats
+  description: 'NordVPN Public API — Stats. 2 operations. Lead operation: Server load statistics. Self-contained Naftiko capability
+    covering one Vpn business surface.'
+  tags:
+  - Vpn
+  - Stats
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    VPN_API_KEY: VPN_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: vpn-stats
+    baseUri: https://api.nordvpn.com
+    description: NordVPN Public API — Stats business capability. Self-contained, no shared references.
+    resources:
+    - name: server-stats
+      path: /server/stats
+      operations:
+      - name: get
+        method: GET
+        description: Server load statistics
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: server-stats-hostname
+      path: /server/stats/{hostname}
+      operations:
+      - name: get
+        method: GET
+        description: Load statistics for a specific server
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: hostname
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: vpn-stats-rest
+    port: 8080
+    description: REST adapter for NordVPN Public API — Stats. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/server/stats
+      name: server-stats
+      description: REST surface for server-stats.
+      operations:
+      - method: GET
+        name: get
+        description: Server load statistics
+        call: vpn-stats.get
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/server/stats/{hostname}
+      name: server-stats-hostname
+      description: REST surface for server-stats-hostname.
+      operations:
+      - method: GET
+        name: get
+        description: Load statistics for a specific server
+        call: vpn-stats.get
+        with:
+          hostname: rest.hostname
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: vpn-stats-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for NordVPN Public API — Stats. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: server-load-statistics
+      description: Server load statistics
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: vpn-stats.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: load-statistics-specific-server
+      description: Load statistics for a specific server
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: vpn-stats.get
+      with:
+        hostname: tools.hostname
+      outputParameters:
+      - type: object
+        mapping: $.

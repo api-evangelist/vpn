@@ -1,0 +1,177 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: NordVPN Public API — Servers
+  description: 'NordVPN Public API — Servers. 3 operations. Lead operation: Retrieve all VPN servers (legacy endpoint). Self-contained
+    Naftiko capability covering one Vpn business surface.'
+  tags:
+  - Vpn
+  - Servers
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    VPN_API_KEY: VPN_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: vpn-servers
+    baseUri: https://api.nordvpn.com
+    description: NordVPN Public API — Servers business capability. Self-contained, no shared references.
+    resources:
+    - name: server
+      path: /server
+      operations:
+      - name: get
+        method: GET
+        description: Retrieve all VPN servers (legacy endpoint)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-servers
+      path: /v1/servers
+      operations:
+      - name: get
+        method: GET
+        description: Get servers with pagination and filter support
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+        - name: offset
+          in: query
+          type: integer
+        - name: filters[country_id]
+          in: query
+          type: integer
+        - name: filters[servers_groups][identifier]
+          in: query
+          type: string
+        - name: filters[servers_technologies][identifier]
+          in: query
+          type: string
+    - name: v1-servers-recommendations
+      path: /v1/servers/recommendations
+      operations:
+      - name: get
+        method: GET
+        description: Get recommended servers for the current client
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+        - name: filters[country_id]
+          in: query
+          type: integer
+        - name: filters[servers_groups][identifier]
+          in: query
+          type: string
+  exposes:
+  - type: rest
+    namespace: vpn-servers-rest
+    port: 8080
+    description: REST adapter for NordVPN Public API — Servers. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/server
+      name: server
+      description: REST surface for server.
+      operations:
+      - method: GET
+        name: get
+        description: Retrieve all VPN servers (legacy endpoint)
+        call: vpn-servers.get
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/servers
+      name: v1-servers
+      description: REST surface for v1-servers.
+      operations:
+      - method: GET
+        name: get
+        description: Get servers with pagination and filter support
+        call: vpn-servers.get
+        with:
+          limit: rest.limit
+          offset: rest.offset
+          filters[country_id]: rest.filters[country_id]
+          filters[servers_groups][identifier]: rest.filters[servers_groups][identifier]
+          filters[servers_technologies][identifier]: rest.filters[servers_technologies][identifier]
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/servers/recommendations
+      name: v1-servers-recommendations
+      description: REST surface for v1-servers-recommendations.
+      operations:
+      - method: GET
+        name: get
+        description: Get recommended servers for the current client
+        call: vpn-servers.get
+        with:
+          limit: rest.limit
+          filters[country_id]: rest.filters[country_id]
+          filters[servers_groups][identifier]: rest.filters[servers_groups][identifier]
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: vpn-servers-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for NordVPN Public API — Servers. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: retrieve-all-vpn-servers-legacy
+      description: Retrieve all VPN servers (legacy endpoint)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: vpn-servers.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-servers-pagination-and-filter
+      description: Get servers with pagination and filter support
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: vpn-servers.get
+      with:
+        limit: tools.limit
+        offset: tools.offset
+        filters[country_id]: tools.filters[country_id]
+        filters[servers_groups][identifier]: tools.filters[servers_groups][identifier]
+        filters[servers_technologies][identifier]: tools.filters[servers_technologies][identifier]
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-recommended-servers-current-client
+      description: Get recommended servers for the current client
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: vpn-servers.get
+      with:
+        limit: tools.limit
+        filters[country_id]: tools.filters[country_id]
+        filters[servers_groups][identifier]: tools.filters[servers_groups][identifier]
+      outputParameters:
+      - type: object
+        mapping: $.
