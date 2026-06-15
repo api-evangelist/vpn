@@ -1,8 +1,8 @@
-# VPN
+# VPN (vpn)
 
-A VPN (Virtual Private Network) creates an encrypted tunnel between a user's device and a remote network, protecting data from interception and masking the user's IP address. VPN technology is widely used for secure remote access to corporate networks, protecting privacy on public Wi-Fi, and bypassing geographic content restrictions.
+A VPN (Virtual Private Network) creates an encrypted tunnel between a user's device and a remote network, protecting data from interception and masking the user's IP address. VPN technology is widely used for secure remote access to corporate networks, protecting privacy on public Wi-Fi, and bypassing geographic content restrictions. This index documents VPN providers, protocols, and APIs relevant to the VPN technology landscape including NordVPN, OpenVPN, WireGuard, Tailscale, and cloud provider VPN services.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/vpn/refs/heads/main/apis.yml)
+**APIs.json:** [https://en.wikipedia.org/wiki/Virtual_private_network](https://en.wikipedia.org/wiki/Virtual_private_network)
 
 ## Scope
 
@@ -11,59 +11,125 @@ A VPN (Virtual Private Network) creates an encrypted tunnel between a user's dev
 
 ## Tags
 
-Encryption, Networking, Privacy, Security, VPN
+- Encryption
+- Networking
+- Privacy
+- Security
+- VPN
 
 ## Timestamps
 
 - **Created:** 2025
-- **Modified:** 2026-05-03
+- **Modified:** 2026-05-19
 
----
+## APIs
 
-## APIs & Providers
+### NordVPN API
 
-| API / Provider | Description | Documentation |
-|----------------|-------------|---------------|
-| [NordVPN API](https://api.nordvpn.com/) | Server listings, recommendations, and WireGuard credential endpoints | [Docs](https://sleeplessbeastie.eu/2019/02/18/how-to-use-public-nordvpn-api/) |
-| [Tailscale API](https://tailscale.com/api) | REST API for managing mesh VPN tailnets, devices, and ACLs | [Docs](https://tailscale.com/api) |
-| [AWS VPN API](https://docs.aws.amazon.com/vpn/) | Site-to-Site VPN and Client VPN via AWS EC2 API | [Docs](https://docs.aws.amazon.com/vpn/) |
-| [Azure VPN Gateway API](https://learn.microsoft.com/en-us/azure/vpn-gateway/) | Managed site-to-site and point-to-site VPN via Azure Resource Manager API | [Docs](https://learn.microsoft.com/en-us/rest/api/network/vpn-gateways) |
+NordVPN's public API provides server listings, recommendations, and user credential retrieval for programmatic VPN configuration, especially useful for WireGuard (NordLynx) configuration generation.
 
----
+- **Human URL:** [https://api.nordvpn.com/](https://api.nordvpn.com/)
+- **Base URL:** `https://api.nordvpn.com/v1`
 
-## Common Resources
+#### Tags
 
-| Resource | Type | URL |
-|----------|------|-----|
-| VPN Wikipedia | Reference | https://en.wikipedia.org/wiki/Virtual_private_network |
-| WireGuard Protocol | Standard | https://www.wireguard.com/ |
-| OpenVPN | Standard | https://openvpn.net/ |
-| Tailscale | Portal | https://tailscale.com/ |
-| NordVPN | Website | https://www.nordvpn.com/ |
-| ProtonVPN | Website | https://protonvpn.com/ |
-| Gluetun (Docker VPN client) | Open Source | https://github.com/qdm12/gluetun |
+- Encryption
+- Networking
+- Privacy
+- Security
+- VPN
 
----
+#### Properties
 
-## JSON Schema
+- [Data Feed](https://api.nordvpn.com/v1/servers)
+- [Data Feed](https://api.nordvpn.com/v1/servers/recommendations)
+- [Documentation](https://sleeplessbeastie.eu/2019/02/18/how-to-use-public-nordvpn-api/)
+- [OpenAPI](openapi/vpn-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/vpn.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/vpn.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-- [vpn-server-schema.json](json-schema/vpn-server-schema.json) — Schema for VPN server endpoints
+### Tailscale API
 
----
+Tailscale provides a REST API for managing tailnets (private mesh networks), devices, users, access control lists, and network configuration. Built on WireGuard, Tailscale enables zero-configuration VPN for teams and organizations.
 
-## JSON-LD
+- **Human URL:** [https://tailscale.com/api](https://tailscale.com/api)
+- **Base URL:** `https://api.tailscale.com/api/v2`
 
-- [vpn-context.jsonld](json-ld/vpn-context.jsonld) — Linked data context for VPN technology
+#### Tags
 
----
+- Encryption
+- Mesh Network
+- Networking
+- Privacy
+- Security
+- VPN
+- WireGuard
+- Zero Trust
 
-## Vocabulary
+#### Properties
 
-- [vpn-vocabulary.yml](vocabulary/vpn-vocabulary.yml) — VPN protocols, encryption standards, and network security vocabulary
+- [Documentation](https://tailscale.com/api)
+- [Base U R L](https://api.tailscale.com/api/v2)
+- [Postman Collection](collections/vpn.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/vpn.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
----
+### AWS VPN API
+
+AWS Site-to-Site VPN and AWS Client VPN provide managed VPN solutions on AWS infrastructure. Managed via the AWS EC2 API and AWS CLI for creating virtual private gateways, customer gateways, and VPN connections.
+
+- **Human URL:** [https://docs.aws.amazon.com/vpn/](https://docs.aws.amazon.com/vpn/)
+- **Base URL:** `https://ec2.amazonaws.com/`
+
+#### Tags
+
+- AWS
+- Cloud
+- Encryption
+- Networking
+- Security
+- VPN
+
+#### Properties
+
+- [Documentation](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html)
+- [Documentation](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/)
+- [Postman Collection](collections/vpn.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/vpn.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+### Azure VPN Gateway API
+
+Azure VPN Gateway provides managed site-to-site, point-to-site, and VNet-to-VNet VPN connections. Managed via Azure Resource Manager REST API and Azure CLI.
+
+- **Human URL:** [https://learn.microsoft.com/en-us/azure/vpn-gateway/](https://learn.microsoft.com/en-us/azure/vpn-gateway/)
+- **Base URL:** `https://management.azure.com/`
+
+#### Tags
+
+- Azure
+- Cloud
+- Encryption
+- Networking
+- Security
+- VPN
+
+#### Properties
+
+- [Documentation](https://learn.microsoft.com/en-us/azure/vpn-gateway/)
+- [Documentation](https://learn.microsoft.com/en-us/rest/api/network/vpn-gateways)
+- [Postman Collection](collections/vpn.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/vpn.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+## Common Properties
+
+- [Reference](https://en.wikipedia.org/wiki/Virtual_private_network)
+- [Standard](https://www.wireguard.com/)
+- [Standard](https://openvpn.net/)
+- [Portal](https://tailscale.com/)
+- [Website](https://www.nordvpn.com/)
+- [Website](https://protonvpn.com/)
+- [Open Source](https://github.com/qdm12/gluetun)
 
 ## Maintainers
 
-**FN:** Kin Lane  
+**FN:** Kin Lane
 **Email:** kin@apievangelist.com

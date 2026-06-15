@@ -1,0 +1,173 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NordVPN Public API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Servers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all VPN servers (legacy endpoint)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nordvpn.com/server"
+          },
+          "docs": "Retrieve all VPN servers (legacy endpoint)"
+        },
+        {
+          "info": {
+            "name": "Get servers with pagination and filter support",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nordvpn.com/v1/servers",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filters[country_id]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filters[servers_groups][identifier]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filters[servers_technologies][identifier]",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get servers with pagination and filter support"
+        },
+        {
+          "info": {
+            "name": "Get recommended servers for the current client",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nordvpn.com/v1/servers/recommendations",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filters[country_id]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filters[servers_groups][identifier]",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get recommended servers for the current client"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Catalog",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List available countries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nordvpn.com/v1/servers/countries"
+          },
+          "docs": "List available countries"
+        },
+        {
+          "info": {
+            "name": "List server groups (categories)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nordvpn.com/v1/servers/groups"
+          },
+          "docs": "List server groups (categories)"
+        },
+        {
+          "info": {
+            "name": "List supported VPN technologies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nordvpn.com/v1/technologies"
+          },
+          "docs": "List supported VPN technologies"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Stats",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Server load statistics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nordvpn.com/server/stats"
+          },
+          "docs": "Server load statistics"
+        },
+        {
+          "info": {
+            "name": "Load statistics for a specific server",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nordvpn.com/server/stats/:hostname",
+            "params": [
+              {
+                "name": "hostname",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Load statistics for a specific server"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
