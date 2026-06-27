@@ -117,11 +117,11 @@ common:
     description: Comprehensive reference on VPN technology and protocols.
   - url: https://www.wireguard.com/
     name: WireGuard Protocol
-    type: Standard
+    type: Standards
     description: Modern, high-performance VPN protocol standard.
   - url: https://openvpn.net/
     name: OpenVPN
-    type: Standard
+    type: Standards
     description: Open-source VPN protocol and software suite.
   - url: https://tailscale.com/
     name: Tailscale
