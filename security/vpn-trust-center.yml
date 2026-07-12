@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://tailscale.com/security
+url: https://tailscale.com/security
+certifications:
+- SOC 2
+- PCI DSS
+- HIPAA
+evidence:
+- source: https://tailscale.com/security
+  keywords:
+  - soc 2
+  - soc2
+  - pci dss
+  - hipaa

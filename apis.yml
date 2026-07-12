@@ -111,6 +111,12 @@ created: '2025'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 common:
+  - type: TrustCenter
+    url: security/vpn-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/vpn-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/vpn-domain-security.yml
   - url: https://en.wikipedia.org/wiki/Virtual_private_network
     name: VPN Wikipedia Article
     type: Reference
