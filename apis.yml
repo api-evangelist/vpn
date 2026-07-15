@@ -111,6 +111,8 @@ created: '2025'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 common:
+  - type: AgenticAccess
+    url: agentic-access/vpn-agentic-access.yml
   - type: TrustCenter
     url: security/vpn-trust-center.yml
   - type: VulnerabilityDisclosure
