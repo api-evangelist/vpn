@@ -1,0 +1,43 @@
+openapi: 3.1.0
+info:
+  title: NordVPN Public Catalog Stats API
+  version: '1.0'
+  description: Minimal OpenAPI for the public NordVPN API providing server listings, recommendations, server load statistics, country and group catalogs, and supported VPN technologies.
+  x-generated-from: https://sleeplessbeastie.eu/2019/02/18/how-to-use-public-nordvpn-api/
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://api.nordvpn.com
+  description: NordVPN public API
+tags:
+- name: Stats
+paths:
+  /server/stats:
+    get:
+      tags:
+      - Stats
+      summary: Server load statistics
+      responses:
+        '200':
+          description: Load statistics
+          content:
+            application/json:
+              schema:
+                type: object
+  /server/stats/{hostname}:
+    get:
+      tags:
+      - Stats
+      summary: Load statistics for a specific server
+      parameters:
+      - name: hostname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Server load
+          content:
+            application/json:
+              schema:
+                type: object

@@ -1,0 +1,55 @@
+openapi: 3.1.0
+info:
+  title: NordVPN Public Catalog API
+  version: '1.0'
+  description: Minimal OpenAPI for the public NordVPN API providing server listings, recommendations, server load statistics, country and group catalogs, and supported VPN technologies.
+  x-generated-from: https://sleeplessbeastie.eu/2019/02/18/how-to-use-public-nordvpn-api/
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://api.nordvpn.com
+  description: NordVPN public API
+tags:
+- name: Catalog
+paths:
+  /v1/servers/countries:
+    get:
+      tags:
+      - Catalog
+      summary: List available countries
+      responses:
+        '200':
+          description: Country list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /v1/servers/groups:
+    get:
+      tags:
+      - Catalog
+      summary: List server groups (categories)
+      responses:
+        '200':
+          description: Server groups
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /v1/technologies:
+    get:
+      tags:
+      - Catalog
+      summary: List supported VPN technologies
+      responses:
+        '200':
+          description: Technology list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
