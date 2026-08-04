@@ -1,0 +1,18 @@
+{
+  "provider": "vpn",
+  "sources": [
+    "vpn-catalog-api-openapi.yml",
+    "vpn-servers-api-openapi.yml",
+    "vpn-stats-api-openapi.yml"
+  ],
+  "outputs": [
+    "vpn-catalog-api-openapi.yml",
+    "vpn-servers-api-openapi.yml",
+    "vpn-stats-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
