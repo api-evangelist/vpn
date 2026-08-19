@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NordVPN Public Catalog Stats API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Stats",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Server load statistics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nordvpn.com/server/stats"
+          },
+          "docs": "Server load statistics"
+        },
+        {
+          "info": {
+            "name": "Load statistics for a specific server",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nordvpn.com/server/stats/:hostname",
+            "params": [
+              {
+                "name": "hostname",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Load statistics for a specific server"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

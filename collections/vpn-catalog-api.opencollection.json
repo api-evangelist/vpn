@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NordVPN Public Catalog API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Catalog",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List available countries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nordvpn.com/v1/servers/countries"
+          },
+          "docs": "List available countries"
+        },
+        {
+          "info": {
+            "name": "List server groups (categories)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nordvpn.com/v1/servers/groups"
+          },
+          "docs": "List server groups (categories)"
+        },
+        {
+          "info": {
+            "name": "List supported VPN technologies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.nordvpn.com/v1/technologies"
+          },
+          "docs": "List supported VPN technologies"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

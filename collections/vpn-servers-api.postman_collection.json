@@ -1,0 +1,315 @@
+{
+  "item": [
+    {
+      "id": "f5c542a9-ad75-4e77-a9f2-5d53c2a3cb62",
+      "name": "Servers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d8bfb5ff-474b-49e3-82b7-98c199709098",
+          "name": "Retrieve all VPN servers (legacy endpoint)",
+          "request": {
+            "name": "Retrieve all VPN servers (legacy endpoint)",
+            "description": {},
+            "url": {
+              "path": [
+                "server"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7bdd66ec-5af6-46b6-96da-61b947f67d27",
+              "name": "Server list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "70f4044e-eec2-4453-829a-de7e51d4c34a",
+          "name": "Get servers with pagination and filter support",
+          "request": {
+            "name": "Get servers with pagination and filter support",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "servers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters[country_id]",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters[servers_groups][identifier]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters[servers_technologies][identifier]",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f613e34c-d8ef-4913-af65-4e7ee92048fc",
+              "name": "Server list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filters[country_id]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filters[servers_groups][identifier]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters[servers_technologies][identifier]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4fc1e5a9-1afc-4f67-bf0c-0e150f3255f4",
+          "name": "Get recommended servers for the current client",
+          "request": {
+            "name": "Get recommended servers for the current client",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "servers",
+                "recommendations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters[country_id]",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters[servers_groups][identifier]",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "830b4c63-b46a-4ad3-bf49-9d92614a5940",
+              "name": "Recommended servers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "servers",
+                    "recommendations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filters[country_id]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filters[servers_groups][identifier]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nordvpn.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f7476edd-80d4-4920-b521-dc8fa0b2780c",
+    "name": "NordVPN Public Catalog Servers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Minimal OpenAPI for the public NordVPN API providing server listings, recommendations, server load statistics, country and group catalogs, and supported VPN technologies.",
+      "type": "text/plain"
+    }
+  }
+}

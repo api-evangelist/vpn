@@ -1,0 +1,188 @@
+{
+  "item": [
+    {
+      "id": "3949c795-f06f-4a20-936a-eabde05dccab",
+      "name": "Stats",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "73919c1c-41ba-46a3-88d9-ac25147ce1c1",
+          "name": "Server load statistics",
+          "request": {
+            "name": "Server load statistics",
+            "description": {},
+            "url": {
+              "path": [
+                "server",
+                "stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "014ce485-211e-4a93-96a2-e8b093d1b7eb",
+              "name": "Load statistics",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "server",
+                    "stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "34724606-1dbf-4c5a-958b-9aa8b496e121",
+          "name": "Load statistics for a specific server",
+          "request": {
+            "name": "Load statistics for a specific server",
+            "description": {},
+            "url": {
+              "path": [
+                "server",
+                "stats",
+                ":hostname"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hostname",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "621ff276-02aa-46c1-a759-3055cf2b31a5",
+              "name": "Server load",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "server",
+                    "stats",
+                    ":hostname"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hostname",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nordvpn.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "68382d03-cba5-4bac-ba97-a4d8a57bf1a6",
+    "name": "NordVPN Public Catalog Stats API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Minimal OpenAPI for the public NordVPN API providing server listings, recommendations, server load statistics, country and group catalogs, and supported VPN technologies.",
+      "type": "text/plain"
+    }
+  }
+}

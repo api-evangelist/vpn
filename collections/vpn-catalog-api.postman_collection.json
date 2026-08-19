@@ -1,0 +1,243 @@
+{
+  "item": [
+    {
+      "id": "700c068b-c3ec-4136-aa66-0ec9d30b7a37",
+      "name": "Catalog",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "73d4169a-3be6-49dd-88a0-4aa00ca209d0",
+          "name": "List available countries",
+          "request": {
+            "name": "List available countries",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "servers",
+                "countries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0588dcc5-d40e-4cbe-9804-ffa91e72957c",
+              "name": "Country list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "servers",
+                    "countries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "547d9a17-55b5-429e-9c3d-e7de864fdffa",
+          "name": "List server groups (categories)",
+          "request": {
+            "name": "List server groups (categories)",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "servers",
+                "groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c8620d25-df04-4059-a230-96e7ff89aca8",
+              "name": "Server groups",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "servers",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4ab0222f-55b6-4576-8ebb-cacef8e42968",
+          "name": "List supported VPN technologies",
+          "request": {
+            "name": "List supported VPN technologies",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "technologies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d2e22a97-8c02-4e3c-99ea-95ea270d55c5",
+              "name": "Technology list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "technologies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.nordvpn.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "52e225c8-ce1a-4e18-ab6d-3fdc069af97b",
+    "name": "NordVPN Public Catalog API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Minimal OpenAPI for the public NordVPN API providing server listings, recommendations, server load statistics, country and group catalogs, and supported VPN technologies.",
+      "type": "text/plain"
+    }
+  }
+}
