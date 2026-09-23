@@ -1,9 +1,7 @@
 {
   "provider": "vpn",
   "sources": [
-    "vpn-catalog-api-openapi.yml",
-    "vpn-servers-api-openapi.yml",
-    "vpn-stats-api-openapi.yml"
+    "_ae-authored/vpn-openapi.yml"
   ],
   "outputs": [
     "vpn-catalog-api-openapi.yml",
@@ -13,6 +11,14 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "vpn-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "vpn-catalog-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "vpn-servers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "vpn-stats-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

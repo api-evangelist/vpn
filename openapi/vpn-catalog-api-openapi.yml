@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: NordVPN Public Catalog API
   version: '1.0'
@@ -25,6 +25,8 @@ paths:
                 type: array
                 items:
                   type: object
+      operationId: getV1ServersCountries
+      x-operation-id-source: derived
   /v1/servers/groups:
     get:
       tags:
@@ -39,6 +41,8 @@ paths:
                 type: array
                 items:
                   type: object
+      operationId: getV1ServersGroups
+      x-operation-id-source: derived
   /v1/technologies:
     get:
       tags:
@@ -53,3 +57,5 @@ paths:
                 type: array
                 items:
                   type: object
+      operationId: getV1Technologies
+      x-operation-id-source: derived
