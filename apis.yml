@@ -156,9 +156,13 @@ apis:
     url: https://sleeplessbeastie.eu/2019/02/18/how-to-use-public-nordvpn-api/
 access: 3rd-Party
 created: '2025'
-modified: '2026-05-19'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 common:
+  - url: https://nordvpn.com/blog/
+    type: Blog
+  - url: https://nordvpn.com/blog/feed/
+    type: BlogRSS
   - type: AgenticAccess
     url: agentic-access/vpn-agentic-access.yml
   - type: TrustCenter
