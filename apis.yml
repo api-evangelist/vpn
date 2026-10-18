@@ -88,6 +88,13 @@ apis:
 - aid: vpn:azure-vpn
   name: Azure VPN Gateway API
   tags:
+  - Microsoft Azure
+  - Cloud
+  - Encryption
+  - Networking
+  - Security
+  - VPN
+  tags_raw:
   - Azure
   - Cloud
   - Encryption
