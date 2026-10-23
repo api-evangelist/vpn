@@ -3,16 +3,16 @@
   "feeds": [
     {
       "source": "https://nordvpn.com/blog/",
-      "feed_url": "https://nordvpn.com/blog/feed/",
-      "title": "",
-      "saved": 9,
-      "method": "discovered"
+      "error": "HTTPError"
     },
     {
       "source": "https://nordvpn.com/blog/feed/",
-      "error": "HTTPError"
+      "feed_url": "https://nordvpn.com/blog/feed/",
+      "title": "",
+      "saved": 10,
+      "method": "feed"
     }
   ],
-  "post_count": 9,
-  "fetched": "2026-10-10T13:15:00Z"
+  "post_count": 19,
+  "fetched": "2026-10-17T14:53:57Z"
 }
