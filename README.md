@@ -1,4 +1,4 @@
-# VPN (vpn)
+# VPN
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,134 +66,146 @@
 
 A VPN (Virtual Private Network) creates an encrypted tunnel between a user's device and a remote network, protecting data from interception and masking the user's IP address. VPN technology is widely used for secure remote access to corporate networks, protecting privacy on public Wi-Fi, and bypassing geographic content restrictions. This index documents VPN providers, protocols, and APIs relevant to the VPN technology landscape including NordVPN, OpenVPN, WireGuard, Tailscale, and cloud provider VPN services.
 
-**APIs.json:** [https://en.wikipedia.org/wiki/Virtual_private_network](https://en.wikipedia.org/wiki/Virtual_private_network)
+**Areas:** Encryption · Networking · Privacy · Security · VPN
 
-## Scope
+## VPN on APIs.io
 
-- **Type:** Index
-- **Access:** 3rd-Party
+Everything profiled for VPN is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/vpn/](https://apis.io/providers/vpn/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (6)
 
-- Encryption
-- Networking
-- Privacy
-- Security
-- VPN
+- [Tailscale API](https://apis.io/apis/vpn/tailscale-api/) — Tailscale provides a REST API for managing tailnets (private mesh networks), devices, users, access control lists, and network configuration. Built on…
+- [AWS VPN API](https://apis.io/apis/vpn/aws-vpn/) — AWS Site-to-Site VPN and AWS Client VPN provide managed VPN solutions on AWS infrastructure. Managed via the AWS EC2 API and AWS CLI for creating virtual…
+- [Azure VPN Gateway API](https://apis.io/apis/vpn/azure-vpn/) — Azure VPN Gateway provides managed site-to-site, point-to-site, and VNet-to-VNet VPN connections. Managed via Azure Resource Manager REST API and Azure CLI.
+- [VPN Catalog API](https://apis.io/apis/vpn/vpn-catalog-api/) — The Catalog API from VPN — 3 operation(s) for catalog.
+- [VPN Servers API](https://apis.io/apis/vpn/vpn-servers-api/) — The Servers API from VPN — 3 operation(s) for servers.
+- [VPN Stats API](https://apis.io/apis/vpn/vpn-stats-api/) — The Stats API from VPN — 2 operation(s) for stats.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### NordVPN API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-NordVPN's public API provides server listings, recommendations, and user credential retrieval for programmatic VPN configuration, especially useful for WireGuard (NordLynx) configuration generation.
+- [Vpn Agentic Access](https://apis.io/agentic-access/vpn/vpn-agentic-access/)
 
-- **Human URL:** [https://api.nordvpn.com/](https://api.nordvpn.com/)
-- **Base URL:** `https://api.nordvpn.com/v1`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Encryption
-- Networking
-- Privacy
-- Security
-- VPN
+- [VPN Server](https://apis.io/schemas/vpn/vpn-server/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Data Feed](https://api.nordvpn.com/v1/servers)
-- [Data Feed](https://api.nordvpn.com/v1/servers/recommendations)
-- [Documentation](https://sleeplessbeastie.eu/2019/02/18/how-to-use-public-nordvpn-api/)
-- [OpenAPI](openapi/vpn-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/vpn.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/vpn.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Linked-data contexts for the provider's vocabulary.
 
-### Tailscale API
+- [Vpn Context](https://apis.io/jsonld/vpn/vpn-context/)
 
-Tailscale provides a REST API for managing tailnets (private mesh networks), devices, users, access control lists, and network configuration. Built on WireGuard, Tailscale enables zero-configuration VPN for teams and organizations.
+#### Vocabulary (1)
 
-- **Human URL:** [https://tailscale.com/api](https://tailscale.com/api)
-- **Base URL:** `https://api.tailscale.com/api/v2`
+The provider's domain terms, defined.
 
-#### Tags
+- [VPN Vocabulary](https://apis.io/vocabularies/vpn/vpn-vocabulary/)
 
-- Encryption
-- Mesh Network
-- Networking
-- Privacy
-- Security
-- VPN
-- WireGuard
-- Zero Trust
+#### Collections (4)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://tailscale.com/api)
-- [Base U R L](https://api.tailscale.com/api/v2)
-- [Postman Collection](collections/vpn.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/vpn.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [NordVPN Public API](https://apis.io/collections/vpn/open-vpn/)
+- [NordVPN Public Catalog API](https://apis.io/collections/vpn/open-vpn-catalog-api/)
+- [NordVPN Public Catalog Servers API](https://apis.io/collections/vpn/open-vpn-servers-api/)
+- [NordVPN Public Catalog Stats API](https://apis.io/collections/vpn/open-vpn-stats-api/)
 
-### AWS VPN API
+#### Governance rules (1)
 
-AWS Site-to-Site VPN and AWS Client VPN provide managed VPN solutions on AWS infrastructure. Managed via the AWS EC2 API and AWS CLI for creating virtual private gateways, customer gateways, and VPN connections.
+Spectral rulesets for the provider's contracts.
 
-- **Human URL:** [https://docs.aws.amazon.com/vpn/](https://docs.aws.amazon.com/vpn/)
-- **Base URL:** `https://ec2.amazonaws.com/`
+- [VPN — jsonschema rules](https://apis.io/rules/vpn/vpn-jsonschema-spectral-rules/)
 
-#### Tags
+#### Security (3)
 
-- AWS
-- Cloud
-- Encryption
-- Networking
-- Security
-- VPN
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Properties
+- [Vpn Domain Security](https://apis.io/security/vpn/vpn-domain-security/)
+- [Vpn Trust Center](https://apis.io/security/vpn/vpn-trust-center/)
+- [Vpn Vulnerability Disclosure](https://apis.io/security/vpn/vpn-vulnerability-disclosure/)
 
-- [Documentation](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html)
-- [Documentation](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/)
-- [Postman Collection](collections/vpn.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/vpn.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Plans and pricing (1)
 
-### Azure VPN Gateway API
+Published plans, tiers and prices.
 
-Azure VPN Gateway provides managed site-to-site, point-to-site, and VNet-to-VNet VPN connections. Managed via Azure Resource Manager REST API and Azure CLI.
+- [Vpn Plans Pricing](https://apis.io/plans/vpn/vpn-plans-pricing/)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/azure/vpn-gateway/](https://learn.microsoft.com/en-us/azure/vpn-gateway/)
-- **Base URL:** `https://management.azure.com/`
+#### Rate limits (1)
 
-#### Tags
+Published request limits.
 
-- Azure
-- Cloud
-- Encryption
-- Networking
-- Security
-- VPN
+- [Vpn Rate Limits](https://apis.io/rate-limits/vpn/vpn-rate-limits/)
 
-#### Properties
+#### FinOps (1)
 
-- [Documentation](https://learn.microsoft.com/en-us/azure/vpn-gateway/)
-- [Documentation](https://learn.microsoft.com/en-us/rest/api/network/vpn-gateways)
-- [Postman Collection](collections/vpn.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/vpn.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+What the API costs to run, by operation.
 
-## Common Properties
+- [Vpn Finops](https://apis.io/finops/vpn/vpn-finops/)
 
-- [Reference](https://en.wikipedia.org/wiki/Virtual_private_network)
-- [Standard](https://www.wireguard.com/)
-- [Standard](https://openvpn.net/)
-- [Portal](https://tailscale.com/)
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.nordvpn.com/)
-- [Website](https://protonvpn.com/)
-- [Open Source](https://github.com/qdm12/gluetun)
+- [Blog](https://nordvpn.com/blog/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 30.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 42.0 |
+| Contract governance | 9.8 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 15.8 |
+
+**Agent readiness 17.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 21.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/vpn/](https://apis.io/providers/vpn/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for VPN: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/vpn/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
